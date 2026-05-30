@@ -46,4 +46,16 @@ if [[ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]]; then
 fi
 success "Plugins installed"
 
+# ── Link hazem-workspace dotfiles (overrides Oh My Zsh default .zshrc) ──
+info "Linking hazem-workspace dotfiles..."
+REPO_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+if [[ -d "$REPO_DIR/shell" ]]; then
+    ln -sf "$REPO_DIR/shell/.zshrc" "$HOME/.zshrc"
+    ln -sf "$REPO_DIR/shell/.aliases" "$HOME/.aliases"
+    ln -sf "$REPO_DIR/shell/.exports" "$HOME/.exports"
+    ln -sf "$REPO_DIR/shell/.functions" "$HOME/.functions"
+    success "Dotfiles linked (Powerlevel10k theme + aliases + exports)"
+fi
+
 success "Core setup complete!"
+info "Restart your terminal or run: exec zsh"
