@@ -1,0 +1,483 @@
+{
+  "version": 1,
+  "sessions": {
+    "ses_1932ed06fffeGGh32wrO0TnNw9": {
+      "title": "",
+      "tokens": {
+        "input": 35306,
+        "output": 1124,
+        "reasoning": 414,
+        "cacheRead": 104192,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "big-pickle",
+      "providerID": "opencode",
+      "time": "2026-05-28T04:22:15.433Z",
+      "messages": 12
+    },
+    "ses_1931b8f76ffeq6Tc4ClgntCglE": {
+      "title": "",
+      "tokens": {
+        "input": 963480,
+        "output": 3004,
+        "reasoning": 10216,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "nemotron-3-super-free",
+      "providerID": "opencode",
+      "time": "2026-05-28T05:07:50.958Z",
+      "messages": 51
+    },
+    "ses_192ebfee7ffe4MQ1sdeq5XyzYb": {
+      "title": "",
+      "tokens": {
+        "input": 229788,
+        "output": 5036,
+        "reasoning": 2220,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "nemotron-3-super-free",
+      "providerID": "opencode",
+      "time": "2026-05-28T05:58:07.708Z",
+      "messages": 18
+    },
+    "ses_1910bbda6ffeGOxZeYZjnlotoh": {
+      "title": "",
+      "tokens": {
+        "input": 3504150,
+        "output": 129476,
+        "reasoning": 139760,
+        "cacheRead": 98971648,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "big-pickle",
+      "providerID": "opencode",
+      "time": "2026-05-28T19:47:44.415Z",
+      "messages": 1921
+    },
+    "ses_18ef49380ffe8yQyVb3B5mm6Uy": {
+      "title": "",
+      "tokens": {
+        "input": 66808,
+        "output": 2576,
+        "reasoning": 3664,
+        "cacheRead": 533504,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "big-pickle",
+      "providerID": "opencode",
+      "time": "2026-05-29T00:15:06.477Z",
+      "messages": 30
+    },
+    "ses_18ecc94f9ffeeIyER1sy7wxQU7": {
+      "title": "",
+      "tokens": {
+        "input": 361094,
+        "output": 31056,
+        "reasoning": 16098,
+        "cacheRead": 8374272,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "big-pickle",
+      "providerID": "opencode",
+      "time": "2026-05-29T01:43:49.757Z",
+      "messages": 210
+    },
+    "ses_18d1ff1a8ffeDVdvOzKmV4L8RB": {
+      "title": "",
+      "tokens": {
+        "input": 56904,
+        "output": 2190,
+        "reasoning": 1066,
+        "cacheRead": 318720,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "big-pickle",
+      "providerID": "opencode",
+      "time": "2026-05-29T08:36:45.814Z",
+      "messages": 21
+    },
+    "ses_18d1ced81ffe05ADk2wgVc6o9e": {
+      "title": "",
+      "tokens": {
+        "input": 63890,
+        "output": 852,
+        "reasoning": 964,
+        "cacheRead": 181376,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "mimo-v2.5-pro",
+      "providerID": "mimo",
+      "time": "2026-05-29T08:40:48.255Z",
+      "messages": 12
+    },
+    "ses_18d1a2485ffegWA95spE3dpYrs": {
+      "title": "",
+      "tokens": {
+        "input": 53866,
+        "output": 24766,
+        "reasoning": 4166,
+        "cacheRead": 3790464,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "mimo-v2.5-pro",
+      "providerID": "mimo",
+      "time": "2026-05-29T09:15:17.287Z",
+      "messages": 129
+    },
+    "ses_18cee2730ffeGndqLXVXuNYFKh": {
+      "title": "",
+      "tokens": {
+        "input": 10009346,
+        "output": 407080,
+        "reasoning": 91210,
+        "cacheRead": 180243072,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "big-pickle",
+      "providerID": "opencode",
+      "time": "2026-05-30T09:28:54.144Z",
+      "messages": 1438
+    },
+    "ses_18ce2903cffe0DT51LzHxzjAp5": {
+      "title": "",
+      "tokens": {
+        "input": 151692,
+        "output": 4114,
+        "reasoning": 2342,
+        "cacheRead": 1156480,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "mimo-v2.5-pro",
+      "providerID": "mimo",
+      "time": "2026-05-29T09:47:11.738Z",
+      "messages": 45
+    },
+    "ses_18ce28299ffeyDm0YaPp3M9fph": {
+      "title": "",
+      "tokens": {
+        "input": 49246,
+        "output": 3518,
+        "reasoning": 348,
+        "cacheRead": 297856,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "mimo-v2.5-pro",
+      "providerID": "mimo",
+      "time": "2026-05-29T09:45:09.835Z",
+      "messages": 18
+    },
+    "ses_18ce27761ffe0CUuoyRcOSN8oW": {
+      "title": "",
+      "tokens": {
+        "input": 91154,
+        "output": 6576,
+        "reasoning": 710,
+        "cacheRead": 1010048,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "mimo-v2.5-pro",
+      "providerID": "mimo",
+      "time": "2026-05-29T09:45:52.812Z",
+      "messages": 39
+    },
+    "ses_18ce26db5ffeiSzxvOh7QkZSYs": {
+      "title": "",
+      "tokens": {
+        "input": 56874,
+        "output": 2946,
+        "reasoning": 362,
+        "cacheRead": 258432,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "mimo-v2.5-pro",
+      "providerID": "mimo",
+      "time": "2026-05-29T09:44:42.664Z",
+      "messages": 15
+    },
+    "ses_18ce26453ffeGGkAEcb46R5UpB": {
+      "title": "",
+      "tokens": {
+        "input": 82604,
+        "output": 4446,
+        "reasoning": 2034,
+        "cacheRead": 796928,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "mimo-v2.5-pro",
+      "providerID": "mimo",
+      "time": "2026-05-29T09:47:56.379Z",
+      "messages": 42
+    },
+    "ses_18ce25a4bffeypGOkZ55ZwCB1A": {
+      "title": "",
+      "tokens": {
+        "input": 179466,
+        "output": 10750,
+        "reasoning": 2836,
+        "cacheRead": 5948288,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "mimo-v2.5-pro",
+      "providerID": "mimo",
+      "time": "2026-05-29T09:51:58.358Z",
+      "messages": 129
+    },
+    "ses_18cd9f903ffeSDJchhFOGzCaw9": {
+      "title": "",
+      "tokens": {
+        "input": 42294,
+        "output": 1684,
+        "reasoning": 166,
+        "cacheRead": 142336,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "mimo-v2.5-pro",
+      "providerID": "mimo",
+      "time": "2026-05-29T09:52:55.656Z",
+      "messages": 9
+    },
+    "ses_18cd9ed53ffenrc8SKFqQXayJZ": {
+      "title": "",
+      "tokens": {
+        "input": 51804,
+        "output": 3784,
+        "reasoning": 428,
+        "cacheRead": 431232,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "mimo-v2.5-pro",
+      "providerID": "mimo",
+      "time": "2026-05-29T09:53:42.569Z",
+      "messages": 24
+    },
+    "ses_18cd9e1eeffeuKIrDtw7XNAT1G": {
+      "title": "",
+      "tokens": {
+        "input": 110092,
+        "output": 5614,
+        "reasoning": 514,
+        "cacheRead": 685312,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "mimo-v2.5-pro",
+      "providerID": "mimo",
+      "time": "2026-05-29T09:54:10.948Z",
+      "messages": 27
+    },
+    "ses_18cd9d52bffePbuS7Vz4yBpGXy": {
+      "title": "",
+      "tokens": {
+        "input": 62196,
+        "output": 2646,
+        "reasoning": 364,
+        "cacheRead": 315648,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "mimo-v2.5-pro",
+      "providerID": "mimo",
+      "time": "2026-05-29T09:53:28.606Z",
+      "messages": 18
+    },
+    "ses_18cd9caa2ffepPv53XsPfDXSV9": {
+      "title": "",
+      "tokens": {
+        "input": 125146,
+        "output": 10314,
+        "reasoning": 4310,
+        "cacheRead": 3286144,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "mimo-v2.5-pro",
+      "providerID": "mimo",
+      "time": "2026-05-29T09:58:04.339Z",
+      "messages": 90
+    },
+    "ses_18cd9bdcfffe2bz7VMNS53TwWw": {
+      "title": "",
+      "tokens": {
+        "input": 62128,
+        "output": 3426,
+        "reasoning": 2018,
+        "cacheRead": 401152,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "mimo-v2.5-pro",
+      "providerID": "mimo",
+      "time": "2026-05-29T09:53:51.188Z",
+      "messages": 18
+    },
+    "ses_18ca54ee0ffeXR3JbdojotyTdv": {
+      "title": "",
+      "tokens": {
+        "input": 97412,
+        "output": 5848,
+        "reasoning": 2098,
+        "cacheRead": 484864,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "mimo-v2.5-pro",
+      "providerID": "mimo",
+      "time": "2026-05-29T10:51:19.930Z",
+      "messages": 21
+    },
+    "ses_18c5e719affetcxQO5XhSqVFEH": {
+      "title": "",
+      "tokens": {
+        "input": 149132,
+        "output": 11626,
+        "reasoning": 930,
+        "cacheRead": 1079936,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "mimo-v2.5-pro",
+      "providerID": "mimo",
+      "time": "2026-05-29T12:09:50.791Z",
+      "messages": 42
+    },
+    "ses_18c5e609dffeEKNrYTfbp2EbEa": {
+      "title": "",
+      "tokens": {
+        "input": 168346,
+        "output": 6122,
+        "reasoning": 1672,
+        "cacheRead": 916864,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "mimo-v2.5-pro",
+      "providerID": "mimo",
+      "time": "2026-05-29T12:09:09.658Z",
+      "messages": 27
+    },
+    "ses_18aec17c4ffeoE6nI0CO1hlV9N": {
+      "title": "",
+      "tokens": {
+        "input": 314128,
+        "output": 30052,
+        "reasoning": 51248,
+        "cacheRead": 25268864,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "mimo-v2.5-pro",
+      "providerID": "mimo",
+      "time": "2026-05-29T19:59:06.535Z",
+      "messages": 489
+    },
+    "ses_18998466cffeFxO0SXzo25KttC": {
+      "title": "",
+      "tokens": {
+        "input": 138522,
+        "output": 7990,
+        "reasoning": 468,
+        "cacheRead": 301312,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "mimo-v2.5-pro",
+      "providerID": "mimo",
+      "time": "2026-05-30T01:04:37.334Z",
+      "messages": 15
+    },
+    "ses_186d994e3ffe0wmDxaOSiZ6Nnz": {
+      "title": "",
+      "tokens": {
+        "input": 407184,
+        "output": 25660,
+        "reasoning": 15768,
+        "cacheRead": 7526144,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "big-pickle",
+      "providerID": "opencode",
+      "time": "2026-05-30T16:07:50.186Z",
+      "messages": 178
+    },
+    "ses_186636fcaffeUwXd21bLgxIxDV": {
+      "title": "",
+      "tokens": {
+        "input": 83382,
+        "output": 9316,
+        "reasoning": 434,
+        "cacheRead": 148480,
+        "cacheWrite": 0
+      },
+      "cost": 0,
+      "modelID": "big-pickle",
+      "providerID": "opencode",
+      "time": "2026-05-30T16:00:05.887Z",
+      "messages": 12
+    }
+  },
+  "totals": {
+    "opencode/big-pickle": {
+      "input": 5356050,
+      "output": 213902,
+      "reasoning": 186334,
+      "cacheRead": 119106816,
+      "cacheWrite": 0,
+      "cost": 0,
+      "sessions": 8,
+      "messages": 2496
+    },
+    "opencode/deepseek-v4-flash-free": {
+      "input": 25050,
+      "output": 76,
+      "reasoning": 200,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "cost": 0,
+      "sessions": 1,
+      "messages": 3
+    },
+    "opencode/nemotron-3-super-free": {
+      "input": 1472066,
+      "output": 8184,
+      "reasoning": 22794,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "cost": 0,
+      "sessions": 3,
+      "messages": 86
+    },
+    "mimo/mimo-v2.5-pro": {
+      "input": 10914268,
+      "output": 541430,
+      "reasoning": 149500,
+      "cacheRead": 223866752,
+      "cacheWrite": 0,
+      "cost": 0,
+      "sessions": 20,
+      "messages": 2515
+    }
+  },
+  "lastUpdated": "2026-05-30T16:07:55.050Z"
+}

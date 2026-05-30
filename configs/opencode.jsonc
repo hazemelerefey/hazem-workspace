@@ -1,0 +1,89 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "OpenAgent",
+  "provider": {
+    "mimo": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "MiMo",
+      "options": {
+        "baseURL": "https://api.xiaomimimo.com/v1",
+        "apiKey": "sk-s0md73p4q72phl8k8fbxvafvr7tf85bzbw3n831wbe10p1is"
+      },
+      "models": {
+        "mimo-v2.5-pro": {
+          "name": "mimo-v2.5-pro",
+          "limit": {
+            "context": 1048576,
+            "output": 131072
+          },
+          "modalities": {
+            "input": ["text"],
+            "output": ["text"]
+          }
+        },
+        "mimo-v2.5": {
+          "name": "mimo-v2.5",
+          "limit": {
+            "context": 1048576,
+            "output": 131072
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          }
+        }
+      }
+    }
+  },
+  "skills": {
+    "paths": [
+      "~/.opencode/skills",
+      "/mnt/d/opencode skills"
+    ]
+  },
+  "plugin": ["opencode-browser"],
+  "instructions": [
+    "~/.opencode/context/core/standards/code-quality.md",
+    "~/.opencode/context/core/workflows/code-review.md",
+    "~/.opencode/context/quota-tracker.md"
+  ],
+  "command": {
+    "quota": {
+      "description": "Show model usage and quota — token counts, costs, and per-model breakdown from the quota tracker",
+      "template": "Read the quota tracker data at ~/.local/share/opencode/quota-tracker.json and present a clear usage summary: total tokens (input/output), total cost, per-model breakdown, and number of sessions tracked. Format it nicely."
+    },
+    "quota.reset": {
+      "description": "Reset all accumulated model usage tracking data",
+      "template": "Read and then delete the contents of ~/.local/share/opencode/quota-tracker.json (write an empty tracker structure to it: {\"version\":1,\"sessions\":{},\"totals\":{},\"lastUpdated\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"}). Confirm the reset is done."
+    }
+  },
+  "mcp": {
+    "stitch": {
+      "type": "remote",
+      "url": "https://stitch.googleapis.com/mcp",
+      "enabled": true,
+      "headers": {
+        "X-Goog-Api-Key": "AQ.Ab8RN6J5pFGfsMu0D5H2EJVYoP_E3O7PTPeTIbKTmWcY3ERXxQ"
+      }
+    },
+    "browsermcp": {
+      "type": "local",
+      "command": ["npx", "-y", "@browsermcp/mcp@0.1.3"],
+      "enabled": true
+    },
+    "colab": {
+      "type": "local",
+      "command": [
+        "uvx", 
+        "git+https://github.com/googlecolab/colab-mcp",
+        "--enable-proxy"
+      ],
+      "timeout": 60000,
+      "enabled": true,
+      "env": {
+        "BROWSER": "/home/hazemelerefy/.local/bin/firefox-browser",
+        "MOZ_ENABLE_WAYLAND": "1"
+      }
+    }
+  }
+}

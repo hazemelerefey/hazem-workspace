@@ -1,0 +1,65 @@
+# ─── Navigation ───
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias ~="cd ~"
+
+# ─── Git ───
+alias g="git"
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit -m"
+alias gp="git push"
+alias gpl="git pull"
+alias gl="git log --oneline --graph"
+alias gd="git diff"
+alias gco="git checkout"
+alias gb="git branch"
+alias glg="lazygit"
+
+# ─── Python ───
+alias py="python3"
+alias python="python3"
+alias pip="pip3"
+alias venv="python3 -m venv"
+alias act="source .venv/bin/activate"
+
+# ─── Node ───
+alias nv="nvm use"
+alias ni="npm install"
+alias nid="npm install --save-dev"
+alias nr="npm run"
+alias nd="npm run dev"
+
+# ─── Docker ───
+alias d="docker"
+alias dc="docker compose"
+alias dps="docker ps"
+alias di="docker images"
+alias dcup="docker compose up -d"
+alias dcdown="docker compose down"
+alias dclogs="docker compose logs -f"
+
+# ─── System ───
+alias ls="eza --icons 2>/dev/null || ls --color=auto"
+alias ll="ls -la"
+alias la="ls -A"
+alias lt="ls -lt"
+alias cat="bat 2>/dev/null || cat"
+alias grep="rg 2>/dev/null || grep --color=auto"
+alias find="fd 2>/dev/null || find"
+alias top="htop 2>/dev/null || top"
+alias tree="tree -C"
+alias df="duf 2>/dev/null || df -h"
+
+# ─── OpenCode ───
+alias oc="opencode"
+
+# ─── Tmux ───
+alias tm="tmux new-session -A -s main"
+alias tml="tmux list-sessions"
+
+# ─── Misc ───
+alias myip="curl -fsSL https://ip.me 2>/dev/null || curl -fsSL https://ifconfig.me 2>/dev/null"
+alias ports="ss -tulanp"
+alias path='echo -e "${PATH//:/\\n}"'

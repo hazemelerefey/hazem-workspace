@@ -1,0 +1,34 @@
+# ─── Path additions ───
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# ─── Go ───
+export PATH="$PATH:/usr/local/go/bin"
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
+
+# ─── Python ───
+export PIP_REQUIRE_VIRTUALENV=false
+
+# ─── NVM ───
+export NVM_DIR="$HOME/.nvm"
+[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
+[[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
+
+# ─── Rust ───
+[[ -s "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
+
+# ─── UV ───
+[[ -s "$HOME/.local/bin/env" ]] && source "$HOME/.local/bin/env" 2>/dev/null || true
+
+# ─── Fzf ───
+[[ -f "/usr/share/doc/fzf/examples/key-bindings.bash" ]] && source "/usr/share/doc/fzf/examples/key-bindings.bash"
+
+# ─── Default editor ───
+export EDITOR="nano"
+export VISUAL="nano"
+
+# ─── History ───
+export HISTSIZE=10000
+export SAVEHIST=10000
+export HISTFILE="$HOME/.zsh_history"

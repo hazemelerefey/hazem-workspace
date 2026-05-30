@@ -1,0 +1,55 @@
+# ─── Create a Python virtual environment ───
+mkvenv() {
+    local name="${1:-.venv}"
+    python3 -m venv "$name"
+    source "$name/bin/activate"
+    echo "✅ Virtual environment '$name' created and activated"
+}
+
+# ─── Find and cd into a directory ───
+fcd() {
+    local dir
+    dir=$(find "${1:-.}" -type d 2>/dev/null | fzf --height 40% --reverse) && cd "$dir" || return
+}
+
+# ─── Interactive grep with fzf ───
+fgrep() {
+    if [[ -z "$1" ]]; then
+        echo "Usage: fgrep <pattern>"
+        return 1
+    fi
+    rg --line-number "$1" | fzf --height 60% --reverse --delimiter ':' --preview 'bat --color=always --highlight-line {2} {1}' --preview-window 'right:60%'
+}
+
+# ─── Extract any archive ───
+extract() {
+    if [[ -f "$1" ]]; then
+        case "$1" in
+            *.tar.bz2) tar xjf "$1" ;;
+            *.tar.gz)  tar xzf "$1" ;;
+            *.tar.xz)  tar xJf "$1" ;;
+            *.bz2)     bunzip2 "$1" ;;
+            *.rar)     unrar x "$1" ;;
+            *.gz)      gunzip "$1" ;;
+            *.tar)     tar xf "$1" ;;
+            *.tbz2)    tar xjf "$1" ;;
+            *.tgz)     tar xzf "$1" ;;
+            *.zip)     unzip "$1" ;;
+            *.Z)       uncompress "$1" ;;
+            *)         echo "Unknown archive: $1" ;;
+        esac
+    else
+        echo "File not found: $1"
+    fi
+}
+
+# ─── Git quick commit + push ───
+gq() {
+    local msg="${1:-quick update}"
+    git add -A && git commit -m "$msg" && git push
+}
+
+# ─── Create a new directory and cd into it ───
+mkd() {
+    mkdir -p "$1" && cd "$1" || return
+}
