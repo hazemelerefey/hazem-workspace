@@ -7,7 +7,7 @@
       "name": "MiMo",
       "options": {
         "baseURL": "https://api.xiaomimimo.com/v1",
-        "apiKey": "sk-s0md73p4q72phl8k8fbxvafvr7tf85bzbw3n831wbe10p1is"
+        "apiKey": "sk-svx1dcqc6t2dgaiqy68lsjnirahtzt3tvez7xxpbs9h74roa"
       },
       "models": {
         "mimo-v2.5-pro": {
