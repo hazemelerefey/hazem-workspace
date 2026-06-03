@@ -1,11 +1,35 @@
-# Hermes
+# Hermes Agent Setup
 
-> ⏳ **Planned** — Integration coming in a future update.
+## One Command
 
-This directory will contain the full Hermes AI agent configuration, ready to deploy alongside OpenCode in your hazem-workspace environment.
+**Windows:**
+```powershell
+irm https://raw.githubusercontent.com/hazemelerefey/hazem-workspace/main/hermes/setup.ps1 | iex
+```
 
-## Setup (when available)
+**macOS / Linux:**
+```bash
+curl -fsSL https://raw.githubusercontent.com/hazemelerefey/hazem-workspace/main/hermes/setup.sh | bash
+```
+
+## What It Does
+
+1. Installs Hermes Agent via pip
+2. Configures MiMo v2.5-pro as default model
+3. Restores skills from backup (if available)
+
+## After Setup
 
 ```bash
-bash setup.sh hermes
+hermes          # Launch Hermes Agent
 ```
+
+## Model
+
+MiMo v2.5-pro via Xiaomi API — same model Hermes runs on.
+
+## Files
+
+- `setup.ps1` — Windows setup script
+- `setup.sh` — macOS/Linux setup script
+- `skills/` — Skills backups (optional)
