@@ -14,7 +14,7 @@ echo -e "${CYAN}========================================${RESET}"
 echo ""
 
 # --- API Key ---
-AGENT_ROUTER_KEY="sk-2DiZntY7Qu5yGz5PCIyromiv9ABoXpW5mtyawyrYyL4ZWfC6"
+AGENT_ROUTER_KEY="sk-m6uNqixfYkJrjpAIyirVcML6dXAR8FVPDVTB3O67MzZDFurI"
 
 # Detect shell profile
 if [ -n "$ZSH_VERSION" ] || [ -f "$HOME/.zshrc" ]; then
