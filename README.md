@@ -2,42 +2,49 @@
 
 > My complete portable AI development environment — one command to set up any new PC.
 
-## Command Execute
+## One-Command Setup
 
-| Component | Command | Size | Status |
-|---|---|---|---|
-| **hazem-env** | `bash setup.sh env` | ~1.5 GB | ✅ Ready |
-| **opencode** | `bash setup.sh opencode` | ~150 MB | ✅ Ready |
-| **hermes** | `bash setup.sh hermes` | TBD | ⏳ Planned |
-| **openclaw** | `bash setup.sh openclaw` | TBD | ⏳ Planned |
-| **hazem-env + opencode** | `bash setup.sh all` | ~1.65 GB | ✅ Ready |
+| Component | Windows | macOS / Linux |
+|---|---|---|
+| **Claude Code** | `irm https://raw.githubusercontent.com/hazemelerefey/hazem-workspace/main/claude-code/setup.ps1 \| iex` | `curl -fsSL https://raw.githubusercontent.com/hazemelerefey/hazem-workspace/main/claude-code/setup.sh \| bash` |
+| **Hermes Agent** | `irm https://raw.githubusercontent.com/hazemelerefey/hazem-workspace/main/hermes/setup.ps1 \| iex` | `curl -fsSL https://raw.githubusercontent.com/hazemelerefey/hazem-workspace/main/hermes/setup.sh \| bash` |
+| **hazem-env** | *(WSL)* `bash setup.sh env` | `bash setup.sh env` |
+| **OpenCode** | *(WSL)* `bash setup.sh opencode` | `bash setup.sh opencode` |
 
-### Quick Start on a New PC
-
-```bash
-# Option A: Everything (env + opencode)
-curl -fsSL https://raw.githubusercontent.com/hazemelerefey/hazem-workspace/main/setup.sh | bash -s -- all
-
-# Option B: Environment only (ZSH, languages, tools, Docker)
-curl -fsSL https://raw.githubusercontent.com/hazemelerefey/hazem-workspace/main/setup.sh | bash -s -- env
-
-# Option C: OpenCode only (configs, agents, sessions)
-curl -fsSL https://raw.githubusercontent.com/hazemelerefey/hazem-workspace/main/setup.sh | bash -s -- opencode
-```
-
-### Sync Sessions Between PCs
+### After Setup
 
 ```bash
-# After working on PC A — push sessions
-cd ~/.opencode
-cp ~/.local/share/opencode/opencode.db sessions/
-cp ~/.local/share/opencode/quota-tracker.json sessions/
-git add -A && git commit -m "Update sessions" && git push
-
-# On PC B — pull sessions
-cd ~/.opencode && git pull
-bash ~/.opencode/scripts/restore-sessions.sh
+claude    # Claude Code (Opus 4.6 via Agent Router)
+hermes    # Hermes Agent (MiMo v2.5-pro via Xiaomi)
 ```
+
+---
+
+## What Each Setup Does
+
+### Claude Code (Agent Router)
+1. Installs Claude Code CLI
+2. Sets model: `claude-opus-4-6`
+3. Configures Agent Router env vars (API key baked in)
+4. Clears cache
+5. Restores sessions from backup
+
+### Hermes Agent (MiMo)
+1. Installs Hermes Agent via pip
+2. Configures MiMo v2.5-pro as default model
+3. Restores skills (if available)
+
+### hazem-env
+- ZSH + Oh My Zsh + Powerlevel10k
+- Python, Node, Go, Rust
+- CLI tools (bat, ripgrep, fd, fzf, tmux, lazygit, jq)
+- Docker Engine + Compose
+
+### OpenCode
+- Full agent configuration
+- All skills + context system
+- 37 saved sessions
+- Telegram bot integration
 
 ---
 
@@ -45,84 +52,75 @@ bash ~/.opencode/scripts/restore-sessions.sh
 
 ```
 hazem-workspace/
-├── setup.sh              ← Universal entry point (bash setup.sh [component])
-├── README.md             ← This file
+├── README.md
+├── setup.sh                    ← Universal entry (bash setup.sh [component])
 │
-├── scripts/              ← Installer modules
-│   ├── install-core.sh        # ZSH + Oh My Zsh + Powerlevel10k + plugins
-│   ├── install-languages.sh   # Python, Node (nvm), Go, Rust
-│   ├── install-tools.sh       # bat, ripgrep, fd, fzf, tmux, lazygit, jq
-│   ├── install-docker.sh      # Docker Engine + Compose
-│   ├── link-dotfiles.sh       # Symlink shell/config files to ~/
-│   └── restore-sessions.sh    # Copy sessions to ~/.local/share/opencode/
-│
-├── shell/                # Shell dotfiles (symlinked to ~/)
-│   ├── .zshrc
-│   ├── .bashrc
-│   ├── .aliases
-│   ├── .exports
-│   └── .functions
-│
-├── configs/              # Tool configs
-│   ├── .gitconfig
-│   ├── .git-credentials
-│   ├── .tmux.conf
-│   └── opencode.jsonc    # → ~/.config/opencode/opencode.jsonc
-│
-├── opencode/             # Full OpenCode config (agents, skills, context, sessions)
-│   ├── agent/
-│   ├── skills/
-│   ├── context/
-│   ├── sessions/         # 37 conversations + quota tracker
-│   └── ...
-│
-├── hermes/               # Placeholder — future
+├── claude-code/                ← Claude Code + Agent Router
+│   ├── setup.ps1                   Windows one-click
+│   ├── setup.sh                    macOS/Linux one-click
+│   ├── settings.json               Claude config
+│   ├── sessions/                   Session backups
 │   └── README.md
 │
-└── openclaw/             # Placeholder — future
-    └── README.md
+├── hermes/                     ← Hermes Agent + MiMo
+│   ├── setup.ps1                   Windows one-click
+│   ├── setup.sh                    macOS/Linux one-click
+│   ├── skills/                     Skills backups
+│   └── README.md
+│
+├── scripts/                    ← Installer modules (env/opencode)
+│   ├── install-core.sh
+│   ├── install-languages.sh
+│   ├── install-tools.sh
+│   ├── install-docker.sh
+│   ├── link-dotfiles.sh
+│   └── restore-sessions.sh
+│
+├── shell/                      ← Shell dotfiles
+├── configs/                    ← Tool configs
+├── opencode/                   ← Full OpenCode config
+└── openclaw/                   ← Placeholder
 ```
 
 ---
 
-## What's Included
+## Update API Keys
 
-### Shell
-- **ZSH** with Oh My Zsh + Powerlevel10k theme
-- Autosuggestions + syntax highlighting plugins
-- Smart aliases for git, Docker, Python, navigation
+Edit the top of each setup script:
 
-### Languages & Runtimes
-- **Python 3.12** — latest stable, with pip + pipx + uv
-- **Node.js** — latest LTS via NVM
-- **Go** — latest stable
-- **Rust** — via rustup
+**Claude Code** (`claude-code/setup.ps1` or `setup.sh`):
+```
+$AGENT_ROUTER_KEY = "sk-your-new-key"
+```
 
-### CLI Tools
-- `bat` — cat with syntax highlighting
-- `ripgrep` — 10x faster grep
-- `fd` — faster find
-- `fzf` — fuzzy search anything
-- `tmux` — terminal multiplexer
-- `lazygit` — Git TUI
-- `jq` — JSON processor
+**Hermes** (`hermes/setup.ps1` or `setup.sh`):
+```
+$MIMO_KEY = "sk-your-new-key"
+```
 
-### Docker
-- Docker Engine + Docker Compose
-- Pre-configured for WSL
-
-### OpenCode
-- Full agent configuration (OpenAgent, CoderAgent, TestEngineer, etc.)
-- All skills (LinkedIn automation, task management, CLI)
-- Complete context system (standards, workflows, project intelligence)
-- 37 saved sessions with full conversation history
-- Telegram bot integration
-- API keys pre-configured
+Then re-run the setup command.
 
 ---
 
-## Requirements
+## Quick Start on a New PC
 
-- **OS:** Ubuntu 24.04+ (or WSL on Windows)
-- **Internet:** Downloads ~1.5 GB of packages
-- **Time:** ~5-10 minutes for full setup
+```bash
+# 1. Clone the workspace
+git clone https://github.com/hazemelerefey/hazem-workspace.git ~/hazem-workspace
+
+# 2. Install Claude Code
+# Windows PowerShell:
+irm https://raw.githubusercontent.com/hazemelerefey/hazem-workspace/main/claude-code/setup.ps1 | iex
+# macOS/Linux:
+curl -fsSL https://raw.githubusercontent.com/hazemelerefey/hazem-workspace/main/claude-code/setup.sh | bash
+
+# 3. Install Hermes
+# Windows PowerShell:
+irm https://raw.githubusercontent.com/hazemelerefey/hazem-workspace/main/hermes/setup.ps1 | iex
+# macOS/Linux:
+curl -fsSL https://raw.githubusercontent.com/hazemelerefey/hazem-workspace/main/hermes/setup.sh | bash
+
+# 4. Open new terminal, run:
+claude    # or
+hermes
+```
