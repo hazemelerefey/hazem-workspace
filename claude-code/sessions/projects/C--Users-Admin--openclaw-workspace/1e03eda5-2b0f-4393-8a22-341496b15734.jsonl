@@ -1,0 +1,3 @@
+{"type":"queue-operation","operation":"enqueue","timestamp":"2026-05-10T13:22:37.910Z","sessionId":"1e03eda5-2b0f-4393-8a22-341496b15734","content":"hey"}
+{"type":"queue-operation","operation":"dequeue","timestamp":"2026-05-10T13:22:37.915Z","sessionId":"1e03eda5-2b0f-4393-8a22-341496b15734"}
+{"parentUuid":null,"isSidechain":false,"promptId":"41ef58a6-e4d5-4748-badf-40620effe9be","type":"user","message":{"role":"user","content":"hey"},"uuid":"8e90fbf2-93f5-4e81-88c2-ef60cf1b220d","timestamp":"2026-05-10T13:22:38.428Z","permissionMode":"default","userType":"external","entrypoint":"sdk-cli","cwd":"C:\\Users\\Admin\\.openclaw\\workspace","sessionId":"1e03eda5-2b0f-4393-8a22-341496b15734","version":"2.1.128","gitBranch":"master"}

@@ -1,0 +1,3 @@
+- [DigiSteel-YOLO Project](project_digisteel_yolo.md) — Graduation project: robustness study of YOLO for steel defects, 17.5% mAP gap to SOTA
+- [Hazem Elerefy](user_hazem_profile.md) — Team lead, AI/Data Analytics diploma student, needs honest technical guidance
+- [Sunday Deadline](project_digisteel_deadline.md) — Supervisor needs DigiSteel v2 vs baseline comparison by 2026-06-07
