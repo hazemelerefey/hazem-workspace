@@ -1,0 +1,392 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "C:\\Users\\Admin\\.openclaw\\workspace",
+      "models": {
+        "xiaomi/mimo-v2.5-pro": {},
+        "xiaomi-pro/mimo-v2.5-pro": {},
+        "xiaomi/mimo-v2.5": {},
+        "bailian/qwen3.6-plus": {},
+        "bailian/qwen3.7-plus": {},
+        "bailian/MiniMax-M2.5": {},
+        "bailian/glm-5": {},
+        "bailian/deepseek-v3.2": {}
+      },
+      "model": {
+        "primary": "xiaomi-pro/mimo-v2.5-pro",
+        "fallbacks": [
+          "xiaomi/mimo-v2.5-pro",
+          "xiaomi/mimo-v2.5"
+        ]
+      }
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "7711f14ece26453ecfbcbf399b5900f0b42a9aa9e05f5eed"
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "tools": {
+    "profile": "coding"
+  },
+  "wizard": {
+    "lastRunAt": "2026-06-09T06:32:47.164Z",
+    "lastRunVersion": "2026.6.1",
+    "lastRunCommand": "configure",
+    "lastRunMode": "local"
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.6.1",
+    "lastTouchedAt": "2026-06-09T06:32:47.333Z"
+  },
+  "skills": {
+    "entries": {
+      "1password": {
+        "enabled": false
+      },
+      "apple-notes": {
+        "enabled": false
+      },
+      "apple-reminders": {
+        "enabled": false
+      },
+      "bear-notes": {
+        "enabled": false
+      },
+      "blogwatcher": {
+        "enabled": false
+      },
+      "blucli": {
+        "enabled": false
+      },
+      "camsnap": {
+        "enabled": false
+      },
+      "coding-agent": {
+        "enabled": false
+      },
+      "discord": {
+        "enabled": false
+      },
+      "eightctl": {
+        "enabled": false
+      },
+      "gifgrep": {
+        "enabled": false
+      },
+      "gog": {
+        "enabled": false
+      },
+      "goplaces": {
+        "enabled": false
+      },
+      "himalaya": {
+        "enabled": false
+      },
+      "imsg": {
+        "enabled": false
+      },
+      "model-usage": {
+        "enabled": false
+      },
+      "obsidian": {
+        "enabled": false
+      },
+      "openai-whisper": {
+        "enabled": false
+      },
+      "openai-whisper-api": {
+        "enabled": false
+      },
+      "openhue": {
+        "enabled": false
+      },
+      "oracle": {
+        "enabled": false
+      },
+      "ordercli": {
+        "enabled": false
+      },
+      "peekaboo": {
+        "enabled": false
+      },
+      "sag": {
+        "enabled": false
+      },
+      "sherpa-onnx-tts": {
+        "enabled": false
+      },
+      "slack": {
+        "enabled": false
+      },
+      "songsee": {
+        "enabled": false
+      },
+      "sonoscli": {
+        "enabled": false
+      },
+      "spotify-player": {
+        "enabled": false
+      },
+      "summarize": {
+        "enabled": false
+      },
+      "things-mac": {
+        "enabled": false
+      },
+      "tmux": {
+        "enabled": false
+      },
+      "trello": {
+        "enabled": false
+      },
+      "voice-call": {
+        "enabled": false
+      },
+      "wacli": {
+        "enabled": false
+      },
+      "xurl": {
+        "enabled": false
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "xiaomi": {
+        "enabled": true
+      }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "xiaomi-pro": {
+        "baseUrl": "https://api.xiaomimimo.com/v1",
+        "apiKey": "sk-s7cjvsjf2hb7vfe961j3n0w3gkoukb7zo64hjdhobrq87l03",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "mimo-v2.5-pro",
+            "name": "Xiaomi MiMo V2.5 Pro (Key 2)",
+            "reasoning": true,
+            "input": ["text"],
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "contextWindow": 1048576,
+            "maxTokens": 32000
+          }
+        ]
+      },
+      "bailian": {
+        "baseUrl": "https://ws-29hs05jrxqayarpv.ap-southeast-1.maas.aliyuncs.com/apps/anthropic",
+        "apiKey": "sk-ws-H.IRRDRI.Vtqm.MEUCIQC-bAfVX8R8Lv1rQGED-STfmW2NkCWaC0V8xEkrf8JwHgIgXboCTbY8vW0U87075p9-vx0zFSSg1HG236UjoFDtYcA",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "qwen3.7-plus",
+            "name": "qwen3.7-plus",
+            "reasoning": true,
+            "input": ["text", "image"],
+            "contextWindow": 1000000,
+            "maxTokens": 65536,
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "compat": { "thinkingFormat": "openai" }
+          },
+          {
+            "id": "qwen3.6-plus",
+            "name": "qwen3.6-plus",
+            "reasoning": true,
+            "input": ["text", "image"],
+            "contextWindow": 1000000,
+            "maxTokens": 65536,
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "compat": { "thinkingFormat": "openai" }
+          },
+          {
+            "id": "MiniMax-M2.5",
+            "name": "MiniMax-M2.5",
+            "reasoning": true,
+            "input": ["text"],
+            "contextWindow": 204800,
+            "maxTokens": 131072,
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
+          },
+          {
+            "id": "glm-5",
+            "name": "glm-5",
+            "reasoning": true,
+            "input": ["text"],
+            "contextWindow": 202752,
+            "maxTokens": 16384,
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "compat": { "thinkingFormat": "openai" }
+          },
+          {
+            "id": "deepseek-v3.2",
+            "name": "deepseek-v3.2",
+            "reasoning": true,
+            "input": ["text"],
+            "contextWindow": 163840,
+            "maxTokens": 16384,
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "compat": { "thinkingFormat": "openai" }
+          }
+        ]
+      },
+      "xiaomi": {
+        "baseUrl": "https://api.xiaomimimo.com/v1",
+        "apiKey": "sk-s69pwyhbawip6huvz4xomszpmlotqayntjo15ioboyoh286y",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "mimo-v2.5-pro",
+            "name": "Xiaomi MiMo V2.5 Pro",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1048576,
+            "maxTokens": 32000
+          },
+          {
+            "id": "mimo-v2.5",
+            "name": "Xiaomi MiMo V2.5",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 262144,
+            "maxTokens": 32000
+          },
+          {
+            "id": "mimo-v2.5-tts",
+            "name": "Xiaomi MiMo V2.5 TTS",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32768,
+            "maxTokens": 8192
+          },
+          {
+            "id": "mimo-v2.5-tts-voicedesign",
+            "name": "Xiaomi MiMo V2.5 TTS Voice Design",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32768,
+            "maxTokens": 8192
+          },
+          {
+            "id": "mimo-v2.5-tts-voiceclone",
+            "name": "Xiaomi MiMo V2.5 TTS Voice Clone",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32768,
+            "maxTokens": 8192
+          },
+          {
+            "id": "mimo-v2-flash",
+            "name": "Xiaomi MiMo V2 Flash",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 262144,
+            "maxTokens": 8192
+          },
+          {
+            "id": "mimo-v2-pro",
+            "name": "Xiaomi MiMo V2 Pro",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1048576,
+            "maxTokens": 32000
+          },
+          {
+            "id": "mimo-v2-omni",
+            "name": "Xiaomi MiMo V2 Omni",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 262144,
+            "maxTokens": 32000
+          }
+        ]
+      }
+    }
+  },
+  "auth": {
+    "profiles": {
+      "xiaomi:default": {
+        "provider": "xiaomi",
+        "mode": "api_key"
+      },
+      "xiaomi-pro:default": {
+        "provider": "xiaomi-pro",
+        "mode": "api_key"
+      }
+    }
+  }
+}
