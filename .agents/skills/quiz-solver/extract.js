@@ -1,42 +1,47 @@
-// Phase 1: Extract all quiz questions from Digilians LMS
-// Fixes applied: P0 (auto-detect), P1 (error reporting), P2 (dead code removal)
+// Phase 1: Extract all quiz questions with radio VALUES + form data
+// v2 - Returns question text, radio values, option text, hidden fields, sesskey
 () => {
   const url = new URL(window.location.href);
   const attempt = url.searchParams.get('attempt');
   const cmid = url.searchParams.get('cmid');
-  if (!attempt || !cmid) return { error: 'Not on a quiz page. Missing attempt or cmid in URL.', url: window.location.href };
+  if (!attempt || !cmid) return { error: 'Missing attempt or cmid.', url: url.href };
 
-  const baseUrl = url.origin + '/mod/quiz/attempt.php?attempt=' + attempt + '&cmid=' + cmid + '&page=';
+  const pageUrl = url.origin + '/mod/quiz/attempt.php?attempt=' + attempt + '&cmid=' + cmid + '&page=';
   const parser = new DOMParser();
 
   async function extractPage(pageNum) {
     try {
-      const resp = await fetch(baseUrl + pageNum);
+      const resp = await fetch(pageUrl + pageNum, { credentials: 'include' });
       if (!resp.ok) return { page: pageNum, error: 'HTTP ' + resp.status };
       const html = await resp.text();
       const doc = parser.parseFromString(html, 'text/html');
       const qText = doc.querySelector('.qtext');
       const answerDiv = doc.querySelector('.answer');
-      if (!qText || !answerDiv) return { page: pageNum, error: 'No question or answer block found' };
+      if (!qText || !answerDiv) return { page: pageNum, error: 'No question/answer block' };
 
       const radios = answerDiv.querySelectorAll('input[type=radio]');
-      if (radios.length === 0) return { page: pageNum, error: 'No radio buttons found' };
+      if (radios.length === 0) return { page: pageNum, error: 'No radio buttons' };
 
       const inputName = radios[0].name;
 
-      // Extract option text — try flex-fill first, then labels
+      // Extract options with ACTUAL radio values (not indices)
       const options = [];
-      const flexes = answerDiv.querySelectorAll('.flex-fill, .d-flex');
-      flexes.forEach(f => {
-        const t = f.textContent.trim();
-        if (t.length > 0 && t.length < 500 && !t.match(/^Question \d+$/)) options.push(t);
+      radios.forEach((radio, idx) => {
+        const label = radio.closest('label') || doc.querySelector('label[for="' + radio.id + '"]');
+        let text = '';
+        if (label) {
+          const flex = label.querySelector('.flex-fill, .d-flex');
+          text = flex ? flex.textContent.trim() : label.textContent.trim();
+        }
+        options.push({ index: idx, value: radio.value, text: text });
       });
 
-      if (options.length === 0) {
-        const labels = answerDiv.querySelectorAll('label');
-        labels.forEach(l => {
-          const t = l.textContent.trim();
-          if (t.length > 0) options.push(t);
+      // Extract ALL hidden form fields (needed for POST submission)
+      const form = doc.querySelector('form');
+      const hiddenFields = {};
+      if (form) {
+        form.querySelectorAll('input[type=hidden]').forEach(inp => {
+          hiddenFields[inp.name] = inp.value;
         });
       }
 
@@ -45,7 +50,8 @@
         question: qText.textContent.trim(),
         inputName: inputName,
         options: options,
-        optionCount: radios.length
+        optionCount: radios.length,
+        hiddenFields: hiddenFields
       };
     } catch (e) {
       return { page: pageNum, error: e.message };
@@ -56,22 +62,17 @@
   const navLinks = document.querySelectorAll('a[href*="page="]');
   let maxPage = 0;
   navLinks.forEach(a => {
-    const match = a.href.match(/page=(\d+)/);
-    if (match) maxPage = Math.max(maxPage, parseInt(match[1]));
+    const m = a.href.match(/page=(\d+)/);
+    if (m) maxPage = Math.max(maxPage, parseInt(m[1]));
   });
-  const finishLink = document.querySelector('a[href*="summary"]');
-  const total = finishLink ? maxPage + 1 : Math.max(navLinks.length, 1);
-
+  const hasSummary = !!document.querySelector('a[href*="summary"]');
+  const total = hasSummary ? maxPage + 1 : Math.max(navLinks.length, 1);
   const pages = Array.from({length: total}, (_, i) => i);
+
   return Promise.all(pages.map(extractPage)).then(results => {
-    const successful = results.filter(r => !r.error);
-    const failed = results.filter(r => r.error);
-    return {
-      totalDetected: total,
-      extracted: successful.length,
-      failed: failed.length,
-      failures: failed,
-      questions: successful
-    };
+    const ok = results.filter(r => !r.error);
+    const fail = results.filter(r => r.error);
+    const sesskey = ok[0]?.hiddenFields?.sesskey || null;
+    return { totalDetected: total, extracted: ok.length, failed: fail.length, failures: fail, sesskey, questions: ok };
   });
 }
