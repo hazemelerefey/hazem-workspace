@@ -26,7 +26,7 @@ Ask the user ONCE for their name and job title. Store for all future proposals i
 
 - Greeting: السلام عليكم أستاذ [اسم العميل]
 - Self-intro: أنا [الاسم], [المسمى الوظيفي]
-- Go straight to: حابب اوضحلك ايه الليهيتم بالظبط
+- Go straight to: حابب اوضحلك ايه اللي هيتم بالظبط
 - Steps (numbered ١. ٢. ٣.)
 - What's needed from client (numbered)
 - Brief notes
@@ -37,7 +37,7 @@ Ask the user ONCE for their name and job title. Store for all future proposals i
 
 - Greeting: السلام عليكم أستاذ [اسم العميل]
 - Self-intro: أنا [الاسم], [المسمى الوظيفي], خبرة أكثر من ٣ سنين في [التخصص]
-- Intro: بخصوص.getProject دا حابب اوضحلك ايه الليهيتم بالظبط
+- Intro: بخصوص.getProject دا حابب اوضحلك ايه اللي هيتم بالظبط
 - Steps (numbered ١. ٢. ٣.)
 - What's needed from client (numbered)
 - Detailed notes with specific tools/examples
