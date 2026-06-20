@@ -17,6 +17,7 @@ Ask the user ONCE for their name and job title. Store for all future proposals i
    - **Client name** (اسم العميل)
    - **Project description** (وصف المشروع — what the client needs)
    - **Country** (البلد — if relevant for documents/requirements)
+   - **Do you have a sample/previous work?** (عندك شغل سابق أو عينه تقدر توريها للعميل؟) — YES or NO
 
 2. Read the project description and decide: is it a **simple task** or a **complex project**?
 
@@ -30,7 +31,8 @@ Ask the user ONCE for their name and job title. Store for all future proposals i
 - Steps (numbered ١. ٢. ٣.)
 - What's needed from client (numbered)
 - Brief notes
-- Optional: offer a sample or preview if relevant
+- If user has a sample: add line like "هسيبلك عينه من [النوع] عشان تشوف النتيجة مبدأيا هتبقى ازاي"
+- If user has NO sample: skip this line entirely
 - NO experience mention, NO "بخصوص.getProject", NO final signature
 
 ### Complex Project (automation systems, full integrations, technical builds)
