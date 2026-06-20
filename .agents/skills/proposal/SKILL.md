@@ -7,12 +7,9 @@ description: "Generate professional freelance proposals in Egyptian formal Arabi
 
 When triggered with `/proposal`, generate a professional freelance proposal in Egyptian formal Arabic (formal slang — baladi but polished).
 
-## First Invocation — Collect User Identity
+## User Identity
 
-On the FIRST `/proposal` call, ask the user:
-"قبل ما نبدأ، محتاج منك اسمك اللي هتقدم بيه على المنصة، والمسمى الوظيفي. ممكن تجيبهم من بروفايلك على المنصة علشان يكونوا متطابقين."
-
-Store the name and job title for all future proposals in this session. Do NOT hardcode any name in the skill.
+Ask the user ONCE for their name and job title. Store for all future proposals in this session.
 
 ## Workflow
 
@@ -21,52 +18,56 @@ Store the name and job title for all future proposals in this session. Do NOT ha
    - **Project description** (وصف المشروع — what the client needs)
    - **Country** (البلد — if relevant for documents/requirements)
 
-2. Generate the proposal with this exact structure:
-   - Greeting: السلام عليكم أستاذ [اسم العميل]
-   - Self-intro: [الاسم], [المسمى الوظيفي], خبرة أكثر من ٣ سنين في [التخصص]
-   - Intro line: بخصوص.getProject دا حابب اوضحلك ايه الليهيتم بالظبط
-   - Steps of execution (numbered ١. ٢. ٣.)
-   - What's needed from the client (numbered)
-   - Important notes (realistic, specific tools/examples — no vague language)
-   - Closing: في انتظار رد حضرتك
-   - Signature: [الاسم] only (no phone, no email)
+2. Read the project description and decide: is it a **simple task** or a **complex project**?
 
-3. Output the proposal ready to copy-paste — no markdown headers, no code blocks, just clean text.
+3. Generate the proposal based on complexity:
+
+### Simple Task (CV, data entry, account creation, basic work)
+
+- Greeting: السلام عليكم أستاذ [اسم العميل]
+- Self-intro: أنا [الاسم], [المسمى الوظيفي]
+- Go straight to: حابب اوضحلك ايه الليهيتم بالظبط
+- Steps (numbered ١. ٢. ٣.)
+- What's needed from client (numbered)
+- Brief notes
+- Optional: offer a sample or preview if relevant
+- NO experience mention, NO "بخصوص.getProject", NO final signature
+
+### Complex Project (automation systems, full integrations, technical builds)
+
+- Greeting: السلام عليكم أستاذ [اسم العميل]
+- Self-intro: أنا [الاسم], [المسمى الوظيفي], خبرة أكثر من ٣ سنين في [التخصص]
+- Intro: بخصوص.getProject دا حابب اوضحلك ايه الليهيتم بالظبط
+- Steps (numbered ١. ٢. ٣.)
+- What's needed from client (numbered)
+- Detailed notes with specific tools/examples
+- Closing: في انتظار رد حضرتك
+- Signature: [الاسم] only
 
 ## Style Rules
 
 - Egyptian formal Arabic — professional but warm, not stiff
 - Brief and direct — no fluff, no filler
-- Sound human — no AI signatures, no "أنا هنا لمساعدتك" vibes
+- Sound human — no AI signatures
 - Use Arabic numerals (١, ٢, ٣) not Western (1, 2, 3)
 - Use numbered lists (١. ٢. ٣.) with natural spacing — NO bullet symbols, NO dashes (—), NO asterisks
 - NO tashkeel/diacritics on any word (no ّ َ ُ ِ etc.)
+- NO non-Arabic characters mixed in text (no Chinese, no English embedded in Arabic words)
 - Keep paragraphs short
-- End with في انتظار رد حضرتك
 - Signature: name only — no phone number, no email (not allowed on platforms)
-- Do NOT include مدة التنفيذ or قيمة العرض in the proposal body — these have dedicated fields on the freelancing platform
+- Do NOT include مدة التنفيذ or قيمة العرض in the proposal body
 
 ## حضرتك Usage
 
-- Use "حضرتك" maximum 1-2 times in the proposal (for initial respect)
-- After that, use casual respectful forms: "محتاج منك", "لو عايز", "هنتفق", etc.
-- Do NOT overuse "حضرتك" — it feels stiff and robotic
+- Use "حضرتك" maximum 1-2 times (for initial respect)
+- After that: "محتاج منك", "لو عايز", "هنتفق", etc.
 
 ## Important Notes Style
 
-When writing important notes or caveats:
 - Be realistic and specific — mention actual tools, methods, or examples
 - Never use vague language like "أدوات وأساليب متقدمة"
-- Example of GOOD: "هيتم استخدام anti-detect browser زي GoLogin أو Multilogin مع proxies مختلفة"
-- Example of BAD: "هيتم باستخدام أدوات وأساليب متقدمة"
-
-## Smart Tone
-
-Adjust proposal length and detail based on project complexity:
-- **Simple projects** (account creation, data entry, basic tasks): Short, direct, minimal detail
-- **Complex projects** (automation systems, full integrations, technical builds): Longer, more detailed, professional structure
-
-Read the project description and decide automatically. Do NOT ask the user about this.
+- GOOD: "هيتم استخدام anti-detect browser زي GoLogin أو Multilogin مع proxies مختلفة"
+- BAD: "هيتم باستخدام أدوات وأساليب متقدمة"
 
 ## Freelancing Platform Fields
 
