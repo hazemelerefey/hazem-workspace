@@ -55,6 +55,8 @@ Ask the user ONCE for their name and job title. Store for all future proposals i
 - Use numbered lists (١. ٢. ٣.) with natural spacing — NO bullet symbols, NO dashes (—), NO asterisks
 - NO tashkeel/diacritics on any word (no ّ َ ُ ِ etc.)
 - NO non-Arabic characters mixed in text (no Chinese, no English embedded in Arabic words)
+- EVERY word must be valid Arabic — double-check each word before outputting. If a word looks wrong or unfamiliar, replace it with a simple Arabic alternative
+- Avoid made-up or broken Arabic words — use common, simple Egyptian Arabic words everyone understands
 - Keep paragraphs short
 - Signature: name only — no phone number, no email (not allowed on platforms)
 - Do NOT include مدة التنفيذ or قيمة العرض in the proposal body
