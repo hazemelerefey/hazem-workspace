@@ -43,8 +43,8 @@ Ask the user ONCE for their name and job title. Store for all future proposals i
 - Steps (numbered ١. ٢. ٣.)
 - What's needed from client (numbered)
 - Detailed notes with specific tools/examples
-- Closing: في انتظار رد حضرتك
-- Signature: [الاسم] only — on its own line at the end, nothing else (no phone, no email, no title)
+- Closing: في انتظاررد حضرتك
+- NO final signature
 
 ## Style Rules
 
@@ -58,7 +58,7 @@ Ask the user ONCE for their name and job title. Store for all future proposals i
 - EVERY word must be valid Arabic — double-check each word before outputting. If a word looks wrong or unfamiliar, replace it with a simple Arabic alternative
 - Avoid made-up or broken Arabic words — use common, simple Egyptian Arabic words everyone understands
 - Keep paragraphs short
-- Signature: name only — no phone number, no email (not allowed on platforms)
+- NO final signature — proposals end after the closing line
 - Do NOT include مدة التنفيذ or قيمة العرض in the proposal body
 
 ## حضرتك Usage
