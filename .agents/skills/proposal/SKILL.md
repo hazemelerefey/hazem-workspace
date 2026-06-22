@@ -25,7 +25,7 @@ Ask the user ONCE for their name and job title. Store for all future proposals i
 
 ### Simple Task (CV, data entry, account creation, basic work)
 
-- Greeting: السلام عليكم أستاذ [اسم العميل]
+- Greeting: السلام عليكم باشمهندس [اسم العميل]
 - Self-intro: أنا [الاسم], [المسمى الوظيفي]
 - Go straight to: حابب اوضحلك ايه اللي هيتم بالظبط
 - Steps (numbered ١. ٢. ٣.)
@@ -37,14 +37,14 @@ Ask the user ONCE for their name and job title. Store for all future proposals i
 
 ### Complex Project (automation systems, full integrations, technical builds)
 
-- Greeting: السلام عليكم أستاذ [اسم العميل]
+- Greeting: السلام عليكم باشمهندس [اسم العميل]
 - Self-intro: أنا [الاسم], [المسمى الوظيفي], خبرة أكثر من ٣ سنين في [التخصص]
 - Intro: حابب اوضحلك ايه اللي هيتم بالظبط
 - Steps (numbered ١. ٢. ٣.)
 - What's needed from client (numbered)
 - Detailed notes with specific tools/examples
 - Closing: في انتظار رد حضرتك
-- Signature: [الاسم] only
+- Signature: [الاسم] only — on its own line at the end, nothing else (no phone, no email, no title)
 
 ## Style Rules
 
